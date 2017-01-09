@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colour Guess</title>
+</head>
+<body onload="colorguess()">
+<script>
+	function inArray(target, array)
+	{
+		for(var i= 0; i<array.length; i++) 
+	  		if(array[i]==target)
+		    	return true;
+		return false; 
+	}
+	function colorguess(){
+		var colors=[ "aqua", "blue", "coral", "gold", "green", "indigo", "lime","red","salmon","yellow"];
+		var rando=Math.random()*10;
+		var rand=Math.floor(rando);
+		var target=colors[rand];
+		var fin=false;
+		var guess=0;
+		var col;
+		//alert("the target is "+target+"\n\n");
+		while(!fin){
+			col=prompt("Guess the color:"+colors.join()+"\n\n");
+			guess++;
+			if(!inArray(col,colors)){
+				alert("I do not recognize the color\n\n");
+			}
+			else if(col<target){
+				alert("Entered color is alphabetically lower than the target\n\n");
+			}
+			else if(col>target){
+				alert("Entered color is alphabetically higher than the target\n\n");
+			}
+			else{
+				document.body.style.backgroundColor=target;
+				alert("You got it!\n\nIt took you "+guess +" guesses!\n\n");
+				fin=true;
+			}
+		}
+	}
+</script>
+</body>
+</html>

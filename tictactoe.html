@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<style>
+		button {width: 100px;height: 100px;background-color: silver;color: black;font-size: 400%;text-align: center; vertical-align: middle;}
+		div {text-align: center;}
+		h1 {background-color: indigo;color: white;text-align: center;
+			padding: 30px}
+		p {font-size: 50px;}
+	</style>
+</head>
+<body style="width: 100%">
+	<h1>TIC TAC TOE</h1>
+	<div>
+		<p id="para">Player O:</p>
+	</div>
+	<div style="margin: auto;">
+		<div>
+			<div>
+				<button id="one" onclick="change(this)"></button>
+				<button id="two" onclick="change(this)"></button>
+				<button id="three" onclick="change(this)"></button>
+			</div>
+			<div>
+				<button id="four" onclick="change(this)"></button>
+				<button id="five" onclick="change(this)"></button>
+				<button id="six" onclick="change(this)"></button>
+			</div>
+			<div >
+				<button id="seven" onclick="change(this)"></button>
+				<button id="eight" onclick="change(this)"></button>
+				<button id="nine" onclick="change(this)"></button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var turn=0;
+		var finished=false;
+		var count=0;
+		function change(event){
+				if (!finished) {
+				if (event.innerHTML==""&& turn==0 ) {
+					event.innerHTML = "O";
+					turn=1;
+					document.getElementById("para").innerHTML = "Player X:";
+				}
+	    		else if (event.innerHTML==""&& turn==1){ 
+	    			event.innerHTML = "X";
+	    			turn=0;
+	    			document.getElementById("para").innerHTML = "Player O:";
+	    		}
+	    		game();
+	    		count++;
+	    		if(count>8 &&finished==false)
+	    			alert("MATCH DRAWN!");
+    		}
+		}
+		function game(){
+			
+			var o00=document.getElementById("one").innerHTML;
+			var o01=document.getElementById("two").innerHTML;
+			var o02=document.getElementById("three").innerHTML;
+			var o10=document.getElementById("four").innerHTML;
+			var o11=document.getElementById("five").innerHTML;
+			var o12=document.getElementById("six").innerHTML;
+			var o20=document.getElementById("seven").innerHTML;
+			var o21=document.getElementById("eight").innerHTML;
+			var o22=document.getElementById("nine").innerHTML;
+
+		
+
+			if ((o00==o01&&o00==o02&&o00!="")||(o10==o11&&o10==o12&&o10!="")||(o20==o21&&o20==o22&&o20!="")||(o00==o10&&o00==o20&&o00!="")||(o01==o11&&o01==o21&&o01!="")||(o02&&o02==o12&&o02==o22!="")||(o00==o11&&o00==o22&&o00!="")||(o20==o11&&o11==o02&&o11!="")) {
+				if (turn==0) 
+					alert("PLAYER X WINS!");
+				else
+					alert("PLAYER O WINS!");
+				finished=true;
+				
+				
+			}
+
+
+		}
+	</script>
+</body>
+</html>

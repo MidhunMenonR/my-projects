@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assesment</title>
+	<style >
+		label:hover , input:hover {font-size: 200%}
+		fieldset {width: 50%; background: lightyellow;border: 10px solid yellow; }
+		label { width: 20%; text-align: right; }
+		.r {color:white;background: red;}
+		.p { color:white; background: purple;}
+		.al {display: inline-block;
+  			width: 80px;
+  			text-align: center;}
+		label {
+  			display: inline-block;
+  			width: 200px;
+  			text-align: right;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Please Enter Your Details For Our Dating Website!</h1>
+	<form >
+		<fieldset>
+			<legend>Your Face</legend>
+			<label for="photo" >Your image:</label>
+			<input type="file" name="photo" id="photo" autofocus=""><br>
+			<label for="image">Image preview:</label>
+		</fieldset><br>
+		<fieldset>
+			<legend>Your General Details</legend>
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" placeholder="Your full name"><br>
+			<label for="gender">Gender:</label>
+			<input type="radio" name="gender" value="male" id="gender" checked> Male
+  			<input type="radio" name="gender" value="female" id="gender"> Female<br>
+			<label for="age">Age:</label>
+			<input type="number" name="age" id="age" min="1" max="99" step="1" required><br>
+			<label for="dob">Date of birth:</label>
+			<input type="date" name="dob" id="dob"><br>
+			<label for="color">Favourite color:</label>
+			<input type="color" name="color" id="color"><br>
+			<label for="country">Country:</label>
+			<select id="country" name="country">
+				<option value="india">India</option>
+				<option value="usa">USA</option>
+				<option value="china">China</option>
+				<option value="england">England</option>
+			</select><br>
+		</fieldset><br>
+		<fieldset>
+			<legend>Your Indicators</legend>
+			<label for="height">Height:</label>
+			<span class="r al">Short</span> <input type="range" name="height" id="height" min="0" max="200" value="100" step="5"><span class="p al">Tall</span><br> 
+			<label for="sal">Salary:</label>
+			<span class="r al">Poor</span> <input type="range" name="sal" id="sal" min="0" max="100" step="1" value="50"><span class="p al">Rich</span><br>
+		</fieldset><br>
+		<fieldset>
+			<legend>Your Contact Information</legend>
+			<label for="mail">Email:</label>
+			<input type="email" name="mail" id="mail"><br>
+			<label for="mobile">Mobile:</label>	
+			<input type="text" name="mobile" id="mobile"><br>
+			<label for="addr">Address:</label>
+			<textarea name="addr" id="addr" rows="3"></textarea><br>
+			<label>Method to contact you:</label>
+			<input type="checkbox" name="email" id="email">Email 
+			<input type="checkbox" name="whatsapp" id="whatsapp">Whatsapp 
+			<input type="checkbox" name="chat" id="chat">In-app chat<br>
+		</fieldset><br>
+		<input type="submit" name="submit" value="Submit!">
+	</form>
+</body>
+</html>
